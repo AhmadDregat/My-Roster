@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Totally Real Site</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <div class="saerch">
+        <input type="text" id="team-input" placeholder="What's the Team name ?">
+        <button>Get Roster</button>
+
+    </div>
+
+    <div class="playersdetails"></div>
+
+    <script id="PlayersInfo" type="text/x-handlebars-template">
+        {{#each Players}}
+        <div class='playerBox'>
+            <div class="info">
+                {{this.firstName}} {{this.lastName}}
+                <br> {{this.jersey}}
+                <img class="playerImage" src="https://nba-players.herokuapp.com/players/{{this.lastName}}/{{this.firstName}}" onerror="this.onerror=null;this.src='http://www.clipartbest.com/cliparts/9i4/6Gk/9i46Gk4GT.jpg'" /><br> {{this.pos}}
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script src="./jquery/dist/jquery.js"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html>
